@@ -39,10 +39,11 @@ This SIEM solution integrates the following components:
 ## Repository Structure
 
 - `/pfsense-config/`: pfSense configuration files
-- `/suricata-rules/`: Custom Suricata rules
+- `/suricata-config/`: Custom Suricata rules
 - `/filebeat-config/`: Filebeat configuration files
-- `/logstash-pipeline/`: Custom Logstash pipeline configuration
-- `/kibana-config/`: Kibana ingest pipeline and dashboard export
+- `/logstash-config/`: Custom Logstash pipeline configuration
+- `/elasticsearch-config/`: Custom Elasticsearch ingest pipeline configuration
+- `/kibana-config/`: Kibana dashboard export
 - `/docs/`: Additional documentation and setup guides
 
 ## Setup and Configuration
