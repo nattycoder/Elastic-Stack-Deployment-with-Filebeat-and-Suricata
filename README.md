@@ -54,7 +54,7 @@ Please refer to the following guides for detailed setup instructions:
 2. [Filebeat Configuration](docs/filebeat-setup.md)
 3. [Security Onion Configuration](docs/security-onion-setup.md)
 4. [Logstash Pipeline Setup](docs/logstash-pipeline-setup.md)
-5. [Kibana Configuration](docs/kibana-setup.md)
+5. [Kibana_and Elasticsearch_Configuration](docs/kibana-elasticsearch-setup.md)
 
 ## Usage
 
