@@ -13,7 +13,7 @@ This SIEM solution integrates the following components:
 - Suricata as the Network Intrusion Detection System (NIDS)
 
 ## Architecture
-<center>![alt text](https://miro.medium.com/v2/resize:fit:720/format:webp/1*0ZLHfPsw2kV-cGutilifoQ.png)</center>
+![alt text](https://miro.medium.com/v2/resize:fit:720/format:webp/1*0ZLHfPsw2kV-cGutilifoQ.png)
 
 ```
 [Network Traffic] --> [Suricata NIDS]
