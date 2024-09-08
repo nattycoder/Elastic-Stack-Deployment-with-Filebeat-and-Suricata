@@ -71,7 +71,7 @@ After setting up the SIEM solution, you can:
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/elastic-stack-siem.git
+   git clone https://github.com/nattyCoder/elastic-stack-siem.git
    ```
 
 2. Navigate to each component's configuration directory and follow the setup instructions in the respective markdown files.
