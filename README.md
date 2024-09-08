@@ -47,11 +47,11 @@ This SIEM solution integrates the following components:
 
 Please refer to the following guides for detailed setup instructions:
 
-1. [Elasticsearch Setup](docs/elasticsearch-setup.md)
-2. [Logstash Setup](docs/logstash-setup.md)
-3. [Kibana Setup](docs/kibana-setup.md)
-4. [Filebeat Setup](docs/filebeat-setup.md)
-5. [Suricata Installation and Configuration](docs/suricata-setup.md)
+1. [Elasticsearch Setup](elasticsearch-config/elasticsearch-setup.md)
+2. [Logstash Setup](logstash-config/logstash-setup.md)
+3. [Kibana Setup](kibana-config/kibana-setup.md)
+4. [Filebeat Setup](filebeat-config/filebeat-setup.md)
+5. [Suricata Installation and Configuration](suricata-config/suricata-setup.md)
 
 ## Usage
 
