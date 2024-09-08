@@ -1,69 +1,100 @@
-# SIEM Solution Deployment Project
+# Elastic Stack SIEM Solution Deployment Project
 
-This project demonstrates the deployment of a comprehensive Security Information and Event Management (SIEM) solution using Security Onion, pfSense, and various open-source security tools.
+This project demonstrates the deployment of a comprehensive Security Information and Event Management (SIEM) solution using the Elastic Stack, Suricata, and Filebeat on Ubuntu Server 22.04.
 
 ## Project Overview
 
 This SIEM solution integrates the following components:
-- Security Onion (latest version) as the core SIEM platform
-- pfSense (latest version) as the firewall
-- Suricata as the Network Intrusion Detection System (NIDS)
-- ELK Stack (Elasticsearch, Logstash, Kibana) for log management and visualization
+
+- Elasticsearch for log storage and indexing
+- Logstash for log processing and enrichment
+- Kibana for log visualization and analysis
 - Filebeat for log shipping
+- Suricata as the Network Intrusion Detection System (NIDS)
 
 ## Architecture
 
 ```
-[Internet] <-> [pfSense + Suricata] <-> [LAN] <-> [Security Onion]
-                     |                               |
-                     |                               |
-                  Filebeat --------------------------> Logstash
-                                                      |
-                                                      v
-                                                 Elasticsearch
-                                                      ^
-                                                      |
-                                                    Kibana
+[Network Traffic] --> [Suricata NIDS]
+         |
+         v
+     [Filebeat]
+         |
+         v
+     [Logstash]
+         |
+         v
+  [Elasticsearch] <--> [Kibana]
 ```
 
 ## Key Features
 
-1. pfSense firewall configuration with LAN and WAN interfaces
-2. Suricata NIDS deployment on pfSense
-3. Custom detection rules for both LAN and WAN interfaces
-4. Filebeat installation and configuration on pfSense
-5. Custom Logstash pipeline on Security Onion
-6. Custom Kibana ingest pipeline for processing Suricata alerts
-7. Kibana dashboard for visualizing Suricata alerts
+1. Elastic Stack (Elasticsearch, Logstash, Kibana) deployment on Ubuntu Server 22.04
+2. Suricata NIDS installation and configuration
+3. Filebeat setup for shipping Suricata logs
+4. Custom Logstash pipeline for processing Suricata alerts
+5. Kibana dashboards for visualizing Suricata alerts
 
 ## Repository Structure
 
-- `/pfsense-config/`: pfSense configuration files
-- `/suricata-config/`: Custom Suricata rules
+- `/elasticsearch-config/`: Elasticsearch configuration files
+- `/logstash-config/`: Logstash pipeline and configuration files
+- `/kibana-config/`: Kibana configuration and dashboard exports
 - `/filebeat-config/`: Filebeat configuration files
-- `/logstash-config/`: Custom Logstash pipeline configuration
-- `/elasticsearch-config/`: Custom Elasticsearch ingest pipeline configuration
-- `/kibana-config/`: Kibana dashboard export
-- `/docs/`: Additional documentation and setup guides
+- `/suricata-config/`: Suricata configuration and custom rules
 
 ## Setup and Configuration
 
 Please refer to the following guides for detailed setup instructions:
 
-1. [pfSense and Suricata Setup](docs/pfsense-suricata-setup.md)
-2. [Filebeat Configuration](docs/filebeat-setup.md)
-3. [Security Onion Configuration](docs/security-onion-setup.md)
-4. [Logstash Pipeline Setup](docs/logstash-pipeline-setup.md)
-5. [Kibana_and Elasticsearch_Configuration](docs/kibana-elasticsearch-setup.md)
+1. [Elasticsearch Setup](docs/elasticsearch-setup.md)
+2. [Logstash Setup](docs/logstash-setup.md)
+3. [Kibana Setup](docs/kibana-setup.md)
+4. [Filebeat Setup](docs/filebeat-setup.md)
+5. [Suricata Installation and Configuration](docs/suricata-setup.md)
 
 ## Usage
 
 After setting up the SIEM solution, you can:
 
-1. Monitor network traffic and alerts through the Suricata interface on pfSense
-2. View and analyze logs in the Security Onion interface
-3. Use the custom Kibana dashboard to visualize Suricata alerts and other relevant data
+1. Monitor network traffic and alerts through Suricata
+2. View and analyze logs in Kibana
+3. Use custom Kibana dashboards to visualize Suricata alerts and other relevant data
+
+## Prerequisites
+
+- Ubuntu Server 22.04 LTS
+- Root or sudo access to the server
+- Basic knowledge of Linux command line and networking concepts
+
+## Quick Start
+
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/elastic-stack-siem.git
+   ```
+
+2. Navigate to each component's configuration directory and follow the setup instructions in the respective markdown files.
+
+3. Start all services in the following order:
+   - Elasticsearch
+   - Kibana
+   - Logstash
+   - Filebeat
+   - Suricata
+
+4. Access Kibana through your web browser and import the provided dashboards for Suricata log visualization.
 
 ## Contributing
 
 Contributions to this project are welcome. Please fork the repository and submit a pull request with your improvements.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- The Elastic team for their excellent documentation
+- The Suricata project for their powerful NIDS
+- The open-source community for their continuous support and contributions
